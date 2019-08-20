@@ -42,7 +42,8 @@ RUN apk --update --virtual build-deps add \
     pecl install \
         apcu \
         imagick \
-        mcrypt-1.0.0 && \
+        mcrypt-1.0.0 \
+        redis-4.3.0 && \
     docker-php-ext-configure gd \
         --with-gd \
         --with-freetype-dir=/usr/include/ \
@@ -61,7 +62,8 @@ RUN apk --update --virtual build-deps add \
         mbstring \
         opcache \
         pdo_mysql \
-        pdo_pgsql && \
+        pdo_pgsql \
+        redis && \
     apk del \
         build-deps
 
